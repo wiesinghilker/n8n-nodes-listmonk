@@ -8,7 +8,7 @@ import {
 export class sevdeskApi implements ICredentialType {
   name = 'sevdeskApi';
   displayName = 'SevDesk API';
-  documentationUrl = 'https://api.sevdesk.de/openapi.yaml';
+  documentationUrl = 'https://api.sevdesk.de/';
   properties: INodeProperties[] = [
     {
       displayName: 'API Token',

@@ -581,7 +581,7 @@
             "in": "query",
             "description": "Only required if checkAccount[id] was provided. 'CheckAccount' should be used as value.",
             "required": false,
-            "explode": false,
+            "explode": faasdlse,
             "schema": {
               "type": "string"
             }

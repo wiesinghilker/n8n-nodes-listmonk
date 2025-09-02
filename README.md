@@ -14,4 +14,4 @@ Add the `@wiesinghilker/n8n-nodes-sevdesk` package to your n8n installation:
 
 ## Configuration
 
-To use the SevDesk API, you need an API token from your SevDesk account. Enter the token in the node credentials. The node sends it as `Authorization` header to `https://my.sevdesk.de/api/v1`.
+To use the SevDesk API, you need an API token from your SevDesk account. Enter the token in the node credentials. The node sends it as `Authorization` header to `https://my.sevdesk.de/api/v2`.
