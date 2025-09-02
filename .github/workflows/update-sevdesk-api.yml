@@ -31,7 +31,7 @@ jobs:
       - name: Update OpenAPI (SevDesk)
         run: |
           curl -fsSL https://api.sevdesk.de/openapi.yaml -o ./nodes/sevdesk/openapi.yaml
-          npx -y js-yaml -j ./nodes/sevdesk/openapi.yaml > ./nodes/sevdesk/openapi.json
+          pnpm exec js-yaml -j ./nodes/sevdesk/openapi.yaml > ./nodes/sevdesk/openapi.json
 
       - name: Check for changes
         id: check

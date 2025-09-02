@@ -27,6 +27,6 @@ clean:
 	rm -rf ./dist
 
 up-sevdesk:
-	# Fetch SevDesk OpenAPI and convert YAML -> JSON (requires curl and npx)
+	# Fetch SevDesk OpenAPI and convert YAML -> JSON (requires curl; run after pnpm install)
 	curl -fsSL https://api.sevdesk.de/openapi.yaml -o ./nodes/sevdesk/openapi.yaml
-	npx -y js-yaml -j ./nodes/sevdesk/openapi.yaml > ./nodes/sevdesk/openapi.json
+	pnpm exec js-yaml -j ./nodes/sevdesk/openapi.yaml > ./nodes/sevdesk/openapi.json
