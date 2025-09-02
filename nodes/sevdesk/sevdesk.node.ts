@@ -3,26 +3,26 @@ import { N8NPropertiesBuilder, N8NPropertiesBuilderConfig } from '@devlikeapro/n
 import * as doc from './openapi.json';
 
 const config: N8NPropertiesBuilderConfig = {};
-const parser = new N8NPropertiesBuilder(doc, config);
+const parser = new N8NPropertiesBuilder(doc as any, config);
 const properties = parser.build();
 
-export class mittwald implements INodeType {
+export class sevdesk implements INodeType {
     description: INodeTypeDescription = {
-        displayName: 'mittwald',
-        name: 'mittwald',
+        displayName: 'SevDesk',
+        name: 'sevdesk',
         icon: 'file:logo.svg',
         group: ['transform'],
         version: 1,
         subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-        description: 'Interact with mittwald mStudio API',
+        description: 'Interact with SevDesk API',
         defaults: {
-            name: 'mittwald',
+            name: 'SevDesk',
         },
         inputs: ['main'],
         outputs: ['main'],
         credentials: [
             {
-                name: 'mittwaldApi',
+                name: 'sevdeskApi',
                 required: true,
             },
         ],
@@ -31,8 +31,9 @@ export class mittwald implements INodeType {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
             },
-            baseURL: 'https://api.mittwald.de',
+            baseURL: 'https://my.sevdesk.de/api/v1',
         },
         properties: properties,
     };
 }
+

@@ -1,17 +1,17 @@
-# n8n node for mittwald mStudio API
+# n8n node for SevDesk API
 
 ## Overview
 
-This node enables the integration of the mittwald mStudio API into n8n to directly manage projects and other resources.
+This node integrates the SevDesk API into n8n to manage contacts, invoices, and other accounting resources.
 
 ![node-actions.png](node-actions.png)
 
 ## Installation
 
-Add the `@wiesinghilker/n8n-nodes-mittwald` package to your n8n installation:
+Add the `@wiesinghilker/n8n-nodes-sevdesk` package to your n8n installation:
 
 ![installation.png](installation.png)
 
 ## Configuration
 
-To use the mittwald API, you need an API token. You can generate this in your mStudio profile. Add the token in the node settings under API token.
+To use the SevDesk API, you need an API token from your SevDesk account. Enter the token in the node credentials. The node sends it as `Authorization` header to `https://my.sevdesk.de/api/v1`.

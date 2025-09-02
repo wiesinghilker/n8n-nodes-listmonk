@@ -1,4 +1,4 @@
-name: Update mittwald API
+name: Update SevDesk API
 
 on:
   schedule:
@@ -10,36 +10,45 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    
+
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '24'
-      
-      - name: Download OpenAPI spec
-        run: |
-          wget -qO- https://api.mittwald.de/v2/openapi.json | jq '.' > nodes/mittwald/openapi.json
-      
+          cache: 'pnpm'
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.1.4
+
+      - name: Install deps
+        run: pnpm install --frozen-lockfile
+
+      - name: Update OpenAPI (SevDesk)
+        run: pnpm openapi:sevdesk
+
       - name: Check for changes
         id: check
         run: |
-          git diff --exit-code nodes/mittwald/openapi.json || echo "changed=true" >> $GITHUB_OUTPUT
-      
+          git diff --exit-code nodes/sevdesk/openapi.json || echo "changed=true" >> $GITHUB_OUTPUT
+
       - name: Bump version and commit
         if: steps.check.outputs.changed == 'true'
         run: |
-          npm version patch --no-git-tag-version
+          pnpm version patch --no-git-tag-version
           VERSION=$(node -p "require('./package.json').version")
-          
+
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
-          
-          git add nodes/mittwald/openapi.json package.json
-          git commit -m "chore: update mittwald API"
+
+          git add nodes/sevdesk/openapi.json package.json pnpm-lock.yaml
+          git commit -m "chore: update SevDesk API"
           git push
-          
+
           git tag "$VERSION"
           git push --tags
+

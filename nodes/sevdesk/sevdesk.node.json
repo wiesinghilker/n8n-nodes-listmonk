@@ -1,0 +1,19 @@
+{
+  "node": "n8n-nodes-base.sevdesk",
+  "nodeVersion": "1.0",
+  "codexVersion": "1.0",
+  "categories": ["Business", "Accounting"],
+  "resources": {
+    "credentialDocumentation": [
+      {
+        "url": "https://api.sevdesk.de/"
+      }
+    ],
+    "primaryDocumentation": [
+      {
+        "url": "https://api.sevdesk.de/openapi.yaml"
+      }
+    ]
+  }
+}
+
