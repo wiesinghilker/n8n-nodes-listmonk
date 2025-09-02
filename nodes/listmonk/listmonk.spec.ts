@@ -1,7 +1,7 @@
-import { sevdesk } from './sevdesk.node';
+import { listmonk } from './listmonk.node';
 
 test('smoke', () => {
-  const node = new sevdesk();
+  const node = new listmonk();
   expect(node.description.properties).toBeDefined();
 });
 

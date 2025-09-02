@@ -1,4 +1,4 @@
-name: Update SevDesk API
+name: Update Listmonk API
 
 on:
   schedule:
@@ -32,15 +32,15 @@ jobs:
       - name: Install deps
         run: pnpm install --frozen-lockfile
 
-      - name: Update OpenAPI (SevDesk)
+      - name: Update OpenAPI (Listmonk)
         run: |
-          curl -fsSL https://api.sevdesk.de/openapi.yaml -o ./nodes/sevdesk/openapi.yaml
-          pnpm exec js-yaml -j ./nodes/sevdesk/openapi.yaml > ./nodes/sevdesk/openapi.json
+          curl -fsSL https://listmonk.app/docs/swagger/collections.yaml -o ./nodes/listmonk/openapi.yaml
+          pnpm exec js-yaml -j ./nodes/listmonk/openapi.yaml > ./nodes/listmonk/openapi.json
 
       - name: Check for changes
         id: check
         run: |
-          git diff --exit-code nodes/sevdesk/openapi.json || echo "changed=true" >> $GITHUB_OUTPUT
+          git diff --exit-code nodes/listmonk/openapi.json || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Bump version and commit
         if: steps.check.outputs.changed == 'true'
@@ -51,8 +51,8 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
 
-          git add nodes/sevdesk/openapi.json package.json pnpm-lock.yaml
-          git commit -m "chore: update SevDesk API"
+          git add nodes/listmonk/openapi.json package.json pnpm-lock.yaml
+          git commit -m "chore: update Listmonk API"
           git push
 
           git tag "$VERSION"

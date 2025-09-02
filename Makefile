@@ -1,19 +1,19 @@
-.PHONY: clean build link start dev
+.PHONY: clean build link start dev up-listmonk
 
 lint:
-	npm run lint
+	pnpm run lint
 
 build:
-	npm run build
+	pnpm run build
 
 link:
 	npm link
 
 start:
-	cd ~/.n8n/custom && npm link @wiesinghilker/n8n-nodes-sevdesk && n8n start
+	cd ~/.n8n/custom && npm link @wiesinghilker/n8n-nodes-listmonk && n8n start
 
 tests:
-	npm run test
+	pnpm run test
 
 dev:
 	make clean
@@ -26,7 +26,8 @@ dev:
 clean:
 	rm -rf ./dist
 
-up-sevdesk:
-	# Fetch SevDesk OpenAPI and convert YAML -> JSON (requires curl; run after pnpm install)
-	curl -fsSL https://api.sevdesk.de/openapi.yaml -o ./nodes/sevdesk/openapi.yaml
-	pnpm exec js-yaml -j ./nodes/sevdesk/openapi.yaml > ./nodes/sevdesk/openapi.json
+up-listmonk:
+	# Fetch Listmonk Swagger YAML and convert to JSON (requires curl; run after pnpm install)
+	curl -fsSL https://listmonk.app/docs/swagger/collections.yaml -o ./nodes/listmonk/openapi.yaml
+	# Use the installed `yaml` CLI to convert YAML -> JSON
+	pnpm exec yaml -j < ./nodes/listmonk/openapi.yaml > ./nodes/listmonk/openapi.json
