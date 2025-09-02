@@ -15,7 +15,7 @@
 - Lint: `pnpm lint` | Fix: `pnpm lintfix`.
 - Format: `pnpm format`.
 - Run in n8n (local link): `make build && make link && make start` (links into `~/.n8n/custom` and starts n8n).
-- Update OpenAPI: `pnpm openapi:sevdesk` (Node script) or `make up-sevdesk`.
+- Update OpenAPI: use `make up-sevdesk`.
 
 ## Coding Style & Naming Conventions
 - Language: TypeScript, strict mode enabled.
@@ -31,7 +31,7 @@
 - Run: `pnpm test`.
 
 ## Commit & Pull Request Guidelines
-- Commits: follow Conventional Commits where possible (`feat:`, `fix:`, `chore:`). Repository history may include migration from Mittwald to SevDesk.
+- Commits: follow Conventional Commits where possible (`feat:`, `fix:`, `chore:`).
 - PRs: include purpose/summary, screenshots if UI assets change, and link related issues. Ensure `pnpm build`, `pnpm lint`, and `pnpm test` pass.
 
 ## Security & Configuration Tips

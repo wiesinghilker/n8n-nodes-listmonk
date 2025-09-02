@@ -29,7 +29,9 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Update OpenAPI (SevDesk)
-        run: pnpm openapi:sevdesk
+        run: |
+          curl -fsSL https://api.sevdesk.de/openapi.yaml -o ./nodes/sevdesk/openapi.yaml
+          npx -y js-yaml -j ./nodes/sevdesk/openapi.yaml > ./nodes/sevdesk/openapi.json
 
       - name: Check for changes
         id: check

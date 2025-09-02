@@ -1,6 +1,6 @@
 {
   "name": "@wiesinghilker/n8n-nodes-sevdesk",
-  "version": "1.0.1",
+  "version": "1.0.22",
   "description": "n8n node for SevDesk API",
   "keywords": [
     "n8n-community-node-package"
@@ -27,8 +27,7 @@
     "test": "jest",
     "format": "prettier nodes credentials --write",
     "lint": "eslint nodes credentials package.json",
-    "lintfix": "eslint nodes credentials package.json --fix",
-    "openapi:sevdesk": "node scripts/fetch-sevdesk-openapi.mjs"
+    "lintfix": "eslint nodes credentials package.json --fix"
   },
   "files": [
     "dist"

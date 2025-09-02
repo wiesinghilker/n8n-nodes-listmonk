@@ -15891,7 +15891,7 @@
           "link": {
             "description": "Download url of the export file",
             "type": "string",
-            "example": "https://sevexport-filestorage-workload-prod.s3.eu-central-1.amazonaws.com/542277/some-id/zip/file.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250317T111422Z&X-Amz-SignedHeaders=host&X-Amz-Credential=REDACTED%2F20250317%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=604800&X-Amz-Signature=REDACTED"
+            "example": "https://sevexport-filestorage-workload-prod.s3.eu-central-1.amazonaws.com/542277/0a0e1eff-9590-1bea-1195-a3cfc04364cc/zip/BITTE-ENTPACKEN_Buchungsstapel_und_Belegbilder_123456_66666_20250201_bis_20250228.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20250317T111422Z&X-Amz-SignedHeaders=host&X-Amz-Credential=AKIAIIODRVFBPEMLYBCQ%2F20250317%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Expires=604800&X-Amz-Signature=35854d4cd746fca8eb9f7624960ea5b207f24ffd2c9bb14361440c70f05998d2"
           },
           "linkExpireDate": {
             "description": "Expire date of the download url",
