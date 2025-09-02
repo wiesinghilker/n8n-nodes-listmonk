@@ -1,6 +1,6 @@
 {
   "name": "@wiesinghilker/n8n-nodes-sevdesk",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "description": "n8n node for SevDesk API",
   "keywords": [
     "n8n-community-node-package"
@@ -55,7 +55,6 @@
     "yaml": "^2.4.5",
     "js-yaml": "^4.1.0"
   },
-  
   "peerDependencies": {
     "n8n-workflow": "*"
   },
