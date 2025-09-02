@@ -587,7 +587,7 @@
             }
           },
           {
-            "name": "isBooked",
+            "name": "isBook",
             "in": "query",
             "description": "Only retrieve booked transactions",
             "required": false,
